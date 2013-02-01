@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>activity</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>#pragma mark - UIActivityViewController
+
+- (IBAction)showActivityView:(id)sender {
+    
+    // Creat the data to send
+    NSString *text = @"Cat";
+    UIImage *image = [UIImage imageNamed:@"SendButton.png"];
+    
+    // Add them to the list of items to send
+    NSArray *activityItems = [NSArray arrayWithObjects:text, image, nil];
+    
+    // Create the Activity View Controller and add the content to send
+    UIActivityViewController *activityViewController = [[UIActivityViewController alloc]
+                                                        initWithActivityItems:activityItems
+                                                        applicationActivities:nil];
+    
+    // Exclude certain services that we don't want
+    NSArray *exclude = [NSArray arrayWithObjects:
+                        UIActivityTypeAssignToContact,
+                        UIActivityTypePostToFacebook,
+                        UIActivityTypePostToTwitter,
+                        UIActivityTypePostToWeibo,
+                        UIActivityTypeSaveToCameraRoll,
+                        nil];
+    
+    [activityViewController setExcludedActivityTypes:exclude];
+    
+    // Show the Activity View Controller to the user
+    [self presentViewController:activityViewController animated:YES completion:nil];
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>193A75CE-0645-4381-AF52-DC923ABDB784</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>Snippet for implementing a UIActivityViewController</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>UI - UIActivityViewController</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>0</integer>
+</dict>
+</plist>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>forceScrollStop</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>- (void)forceScrollingToStop {
+    
+    CGPoint offset = self.scrollWheel.contentOffset;
+    [self.scrollWheel setContentOffset:offset animated:NO];
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>FD42E1EF-7F82-4088-9159-E5832807CD46</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>Force a UIScrollView to stop scrolling immediately</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>UI - UIScrollView - Force Scroll Stop</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

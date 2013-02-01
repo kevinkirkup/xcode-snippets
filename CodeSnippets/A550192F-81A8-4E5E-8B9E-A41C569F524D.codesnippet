@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeExpression</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, &lt;#width#&gt;, &lt;#height#&gt;)];
+    
+    label.backgroundColor = [UIColor clearColor];
+    label.textColor = [UIColor blackColor];
+    label.font = [UIFont fontWithName:&lt;#font#&gt; size:&lt;#font size#&gt;];
+    label.shadowColor = [UIColor colorWithWhite:0.0 alpha:0.5];
+    
+    label.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+    label.textAlignment = UITextAlignmentLeft;
+    label.text = &lt;#text#&gt;;</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>A550192F-81A8-4E5E-8B9E-A41C569F524D</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetPlatformFamily</key>
+	<string>iphoneos</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>Template code for UILabel</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>UILabel Default</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
