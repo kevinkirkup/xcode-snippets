@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>actionSheet</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>#pragma mark - UIActionSheet
+
+- (IBAction)showActionSheet:(id)sender {
+    
+    NSString *actionSheetTitle = @"How would you like to send results";
+    NSString *destructiveTitle = @"Destructive Button";
+    NSString *other1 = @"Other Button 1";
+    NSString *other2 = @"Other Button 2";
+    NSString *other3 = @"Other Button 3";
+    NSString *cancelTitle = @"Cancel Button";
+    
+    UIActionSheet *actionSheet = [[UIActionSheet alloc]
+                                  initWithTitle:actionSheetTitle
+                                  delegate:self
+                                  cancelButtonTitle:cancelTitle
+                                  destructiveButtonTitle:destructiveTitle
+                                  otherButtonTitles:other1, other2, other3, nil];
+    
+    [actionSheet showInView:self.view];
+    
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    
+    // Get the name of the current pressed button
+    NSString *buttonTitle = [actionSheet buttonTitleAtIndex:buttonIndex];
+    
+    if ([buttonTitle isEqualToString:@"Destructive Button"])
+        NSLog(@"Destructive pressed --&gt; Delete Somethign");
+    
+    else if ([buttonTitle isEqualToString:@"Other Button 1"])
+        NSLog(@"Other 1 pressed");
+    
+    else if ([buttonTitle isEqualToString:@"Other Button 2"])
+        NSLog(@"Other 2 pressed");
+    
+    else if ([buttonTitle isEqualToString:@"Other Button 3"])
+        NSLog(@"Other 3 pressed");
+    
+    else if ([buttonTitle isEqualToString:@"Cancel Button"])
+        NSLog(@"Cancel pressed --&gt; Cancel ActionSheet");
+    
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>EE4FFACB-35E2-49E3-8D10-7386B81046FE</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>A simple UIActionSheet template</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>UI - UIActionSheet</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>0</integer>
+</dict>
+</plist>

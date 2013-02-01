@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>spl</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>- (void)saveToPlist {
+    
+    NSString *path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    path = [path stringByAppendingPathComponent:@"&lt;#name#&gt;.plist"];
+
+    // Create the default measurement file if it doesn't already exist
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    if (![fileManager fileExistsAtPath:path]) {
+        
+        NSString *defaultPath = [[NSBundle mainBundle] pathForResource:@"&lt;#name#&gt;"
+                                                               ofType:@"plist"];
+        
+        [fileManager copyItemAtPath:defaultPath
+                             toPath:path
+                              error:nil];
+        
+    }
+    
+    // Write data to file
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>2E29B5EC-72BA-4014-B592-BE00449A0A54</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetPlatformFamily</key>
+	<string>iphoneos</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>Save data to the plist file</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Save to plist</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
