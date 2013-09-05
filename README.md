@@ -5,7 +5,7 @@ XCode 4 snippets
 
 The snippets for XCode 4 are stored in the users library directory.
 
-    ~/Library//Developer/Xcode/UserData/CodeSnippets
+    ~/Library/Developer/Xcode/UserData/CodeSnippets
 
 Each code snippet is stored in it's own plist file so it should be pretty easy to
 add new snippets that you want and leave the snippets that you don't.

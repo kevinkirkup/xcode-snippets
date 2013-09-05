@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>dbw</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    // Write the data to dropbox as well
+    if ([[[DBAccountManager sharedManager] linkedAccount] isLinked]) {
+        
+        BOOL succeeded = NO;
+        DBError *error = nil;
+        DBFile *file = nil;
+        
+        DBPath *filePath = [[DBPath root] childPath:@"measurements.plist"];
+        DBFilesystem *fileSystem = [DBFilesystem sharedFilesystem];
+        
+        DBFileInfo *info = [fileSystem fileInfoForPath:filePath
+                                                 error:&amp;error];
+        
+        NSData *plistFile = [[NSData alloc] initWithContentsOfFile:path];
+        
+        // File already exists
+        if (info)
+            file = [fileSystem openFile:filePath
+                                  error:&amp;error];
+        
+        // Create file
+        else
+            file = [fileSystem createFile:filePath
+                                    error:&amp;error];
+        
+        // Write the file
+        if (file)
+            succeeded = [file writeData:plistFile
+                                  error:&amp;error];
+        
+        if (succeeded)
+            DDLogVerbose(@"Writing to Dropbox: complete!");
+        
+        else
+            DDLogError(@"Failed to write file to dropbox account: path=%@", filePath);
+        
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>B05EAD9C-542F-4284-8726-5BC7CE030DF4</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>Snippet to write a file to dropbox</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Dropbox - Write Dropbox File</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

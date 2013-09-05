@@ -3,36 +3,23 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>tvr</string>
+	<string>library</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>CodeBlock</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>    // Only One row
-    if ([self.tableView numberOfRowsInSection:indexPath.section] == 1) {
-     
-    // First row
-    } else if (indexPath.row == 0) {
-        
-    // Last Row
-    } else if (indexPath.row == ([self.tableView numberOfRowsInSection:indexPath.section] - 1)) {
-        
-    // Middle rows
-    } else {
-        
-    }</string>
+	<string>NSArray *librarySearchPaths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
+NSString *libraryDirectory = [librarySearchPaths count] == 0 ? nil : [librarySearchPaths objectAtIndex:0];</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>65D3F628-B0DF-4EB9-A609-BBCD7EFD957A</string>
+	<string>6C5A235A-18BC-43D9-B026-9946BB96D360</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
-	<key>IDECodeSnippetSummary</key>
-	<string>Block to check which row we are in a table view</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>UITableView Rows - find row</string>
+	<string>Library Directory Path</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
-	<integer>2</integer>
+	<integer>0</integer>
 </dict>
 </plist>

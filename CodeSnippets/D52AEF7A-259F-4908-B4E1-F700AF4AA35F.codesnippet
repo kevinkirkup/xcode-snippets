@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    // Initialize Dropbox SyncAPI
+    DBAccountManager *accountManger = [[DBAccountManager alloc] initWithAppKey:@"ymgk1ol8p7tmctv"
+                                                                        secret:@"t6lbxx7fvxdeulr"];
+    [DBAccountManager setSharedManager:accountManger];
+    
+    DBAccount *account = [accountManger linkedAccount];
+    
+    if ([account isLinked]) {
+        
+        DBFilesystem *fileSystem = [[DBFilesystem alloc] initWithAccount:account];
+        [DBFilesystem setSharedFilesystem:fileSystem];
+        
+    }
+    
+    // Listen for account updates
+    [account addObserver:self block:^(DBAccount *account) {
+        
+        // Account unlinked
+        if ([account isLinked]) {
+            
+            [self.storage writeMeasurementDocuments:self.settings.recordedMeasurements];
+        }
+        
+    }];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>D52AEF7A-259F-4908-B4E1-F700AF4AA35F</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Dropbox - Initialize Account Manager</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
