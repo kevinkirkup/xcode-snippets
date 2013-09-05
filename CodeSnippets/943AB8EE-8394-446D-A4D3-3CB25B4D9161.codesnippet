@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>// Add to ViewController
+
+#pragma mark - State Restoration
+
++ (UIViewController *)viewControllerWithRestorationIdentifierPath:(NSArray *)identifierComponents
+                                                            coder:(NSCoder *)coder
+{
+    TSDataEntryViewController* viewController;
+    UIStoryboard* storyboard = [coder decodeObjectForKey:UIStateRestorationViewControllerStoryboardKey];
+    
+    if (storyboard) {
+        
+        viewController = (TSDataEntryViewController *)[storyboard instantiateViewControllerWithIdentifier:@"EntryViewController"];
+        viewController.restorationIdentifier = [identifierComponents lastObject];
+        viewController.restorationClass = [TSDataEntryViewController class];
+    }
+    
+    return viewController;
+}
+
+- (void)encodeRestorableStateWithCoder:(NSCoder *)coder
+{
+    [super encodeRestorableStateWithCoder:coder];
+    
+    [coder encodeObject:self.current forKey:@"CurrentMeasurement"];
+}
+
+- (void)decodeRestorableStateWithCoder:(NSCoder *)coder
+{
+    [super decodeRestorableStateWithCoder:coder];
+    
+    self.current = [coder decodeObjectForKey:@"CurrentMeasurement"];
+    
+    [self updateViews:self.current];
+    
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>943AB8EE-8394-446D-A4D3-3CB25B4D9161</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>Methods to save and restore view controller</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>State Restoration - Restore/Save State</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

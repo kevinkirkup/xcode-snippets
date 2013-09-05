@@ -3,36 +3,22 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>tvr</string>
+	<string>stack</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>CodeBlock</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>    // Only One row
-    if ([self.tableView numberOfRowsInSection:indexPath.section] == 1) {
-     
-    // First row
-    } else if (indexPath.row == 0) {
-        
-    // Last Row
-    } else if (indexPath.row == ([self.tableView numberOfRowsInSection:indexPath.section] - 1)) {
-        
-    // Middle rows
-    } else {
-        
-    }</string>
+	<string>NSLog(@"Call Stack: %@", [NSThread callStackSymbols]);</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>65D3F628-B0DF-4EB9-A609-BBCD7EFD957A</string>
+	<string>22F1267A-DCE9-4363-8D8F-8E8676875539</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
-	<key>IDECodeSnippetSummary</key>
-	<string>Block to check which row we are in a table view</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>UITableView Rows - find row</string>
+	<string>Log Stack Trace</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
-	<integer>2</integer>
+	<integer>0</integer>
 </dict>
 </plist>

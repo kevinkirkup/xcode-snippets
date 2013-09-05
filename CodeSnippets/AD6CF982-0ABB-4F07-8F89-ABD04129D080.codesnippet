@@ -3,36 +3,32 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>tvr</string>
+	<string>tvdel</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>CodeBlock</string>
+		<string>ClassImplementation</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>    // Only One row
-    if ([self.tableView numberOfRowsInSection:indexPath.section] == 1) {
-     
-    // First row
-    } else if (indexPath.row == 0) {
-        
-    // Last Row
-    } else if (indexPath.row == ([self.tableView numberOfRowsInSection:indexPath.section] - 1)) {
-        
-    // Middle rows
-    } else {
-        
-    }</string>
+	<string>#pragma mark - UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView 
+didSelectRowAtIndexPath:(NSIndexPath *)indexPath 
+{
+    &lt;#statements#&gt;
+}</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>65D3F628-B0DF-4EB9-A609-BBCD7EFD957A</string>
+	<string>AD6CF982-0ABB-4F07-8F89-ABD04129D080</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetPlatformFamily</key>
+	<string>iphoneos</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>Block to check which row we are in a table view</string>
+	<string>Placeholders for required UITableViewDelegate protocol methods</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>UITableView Rows - find row</string>
+	<string>UITableViewDelegate</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
-	<integer>2</integer>
+	<integer>0</integer>
 </dict>
 </plist>

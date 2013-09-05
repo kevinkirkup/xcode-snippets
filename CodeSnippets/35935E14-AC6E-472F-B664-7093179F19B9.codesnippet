@@ -3,36 +3,32 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>tvr</string>
+	<string>singleton</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>CodeBlock</string>
+		<string>ClassImplementation</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>    // Only One row
-    if ([self.tableView numberOfRowsInSection:indexPath.section] == 1) {
-     
-    // First row
-    } else if (indexPath.row == 0) {
-        
-    // Last Row
-    } else if (indexPath.row == ([self.tableView numberOfRowsInSection:indexPath.section] - 1)) {
-        
-    // Middle rows
-    } else {
-        
-    }</string>
+	<string>+ (instancetype)shared&lt;#name#&gt; {
+    static &lt;#class#&gt; *_shared&lt;#name#&gt; = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&amp;onceToken, ^{
+        _shared&lt;#name#&gt; = &lt;#initializer#&gt;;
+    });
+    
+    return _shared&lt;#name#&gt;;
+}</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>65D3F628-B0DF-4EB9-A609-BBCD7EFD957A</string>
+	<string>35935E14-AC6E-472F-B664-7093179F19B9</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>Block to check which row we are in a table view</string>
+	<string>Class method that returns a singleton instance</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>UITableView Rows - find row</string>
+	<string>Shared Singleton</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
-	<integer>2</integer>
+	<integer>0</integer>
 </dict>
 </plist>

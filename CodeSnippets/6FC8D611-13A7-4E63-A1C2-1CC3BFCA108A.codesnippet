@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>dbr</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    // Try to read the dropbox data if it is available
+    if ([[[DBAccountManager sharedManager] linkedAccount] isLinked]) {
+        
+        DBError *error = nil;
+        DBFile *file = nil;
+
+        
+        DBPath *filePath = [[DBPath root] childPath:@"measurements.plist"];
+        DBFilesystem *fileSystem = [DBFilesystem sharedFilesystem];
+        
+        DBFileInfo *info = [fileSystem fileInfoForPath:filePath
+                                                 error:&amp;error];
+        
+        // File already exists
+        if (info) {
+            
+            NSData *plistFile = nil;
+            
+            file = [fileSystem openFile:filePath
+                                  error:&amp;error];
+            
+            // Read the file
+            if (file)
+                plistFile = [file readData:&amp;error];
+            
+            if (plistFile == nil)
+                DDLogError(@"Failed to read file to dropbox account: path=%@", filePath);
+            
+            else
+                DDLogVerbose(@"Writing to Dropbox: complete!");
+
+
+        }
+        
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>6FC8D611-13A7-4E63-A1C2-1CC3BFCA108A</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>Snippet to read a dropbox file</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Dropbox - Read Dropbox File</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

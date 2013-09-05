@@ -2,34 +2,30 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>tvr</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>CodeBlock</string>
+		<string>ClassImplementation</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>    // Only One row
-    if ([self.tableView numberOfRowsInSection:indexPath.section] == 1) {
-     
-    // First row
-    } else if (indexPath.row == 0) {
+	<string>
+- (IBAction)done:(id)sender {
+    
+    // Transition back to the previous view
+    [self dismissViewControllerAnimated:YES completion:^{
         
-    // Last Row
-    } else if (indexPath.row == ([self.tableView numberOfRowsInSection:indexPath.section] - 1)) {
+        // UnSubscribe from events
         
-    // Middle rows
-    } else {
-        
-    }</string>
+        NSLog(@"Done completed");
+    }];
+}</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>65D3F628-B0DF-4EB9-A609-BBCD7EFD957A</string>
+	<string>3140C6CC-EF61-434F-B98F-1FFFEECE4300</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>Block to check which row we are in a table view</string>
+	<string>Dismiss the current modal view</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>UITableView Rows - find row</string>
+	<string>UIButton - Dismiss View</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
